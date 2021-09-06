@@ -98,7 +98,10 @@ function load() {
         var saved_date = `${month+1}/${i-paddingDays}/${year}`
         if (savedDates.includes(saved_date, 0)){
           // console.log('already saved dates');
-          alert('already saved dates');
+          const idx = savedDates.indexOf(saved_date);
+          alert('remove');
+          savedDates.splice(idx, 1);
+          document.getElementById('savedDates').innerHTML = savedDates;
         }
         else{
           savedDates.push(saved_date); // ----------- KEY POINT -----------=> push
