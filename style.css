@@ -10,8 +10,6 @@ button {
     box-shadow: 0px 0px 2px gray;
     border: none;
     outline: none;
-    padding: 5px;
-    border-radius: 5px;
     color: white;
 }
 
@@ -64,16 +62,12 @@ button {
     justify-content: space-between;
 }
 
-.day:hover {
-    background-color: #e8faed;
-}
-
 .day+#currentDay {
     background-color: #e8f4fa;
 }
 
 .event {
-    font-size: 10px;
+    font-size: 5px;
     padding: 3px;
     background-color: #58bae4;
     color: white;

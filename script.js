@@ -78,18 +78,27 @@ function load() {
         daySquare.appendChild(eventDiv);
       }
 
-      daySquare.addEventListener('click', 
+      // add event button
+      const daySquare2 = document.createElement('button');
+      daySquare2.classList.add('day2');
+      daySquare2.innerHTML = 'add event';
+      daySquare.appendChild(daySquare2);
+
+      // daySquare.addEventListener('click',
+      daySquare2.addEventListener('click', 
       // () => console.log(`${month+1}/${i-paddingDays}/${year}`)); // ----------- KEY POINT -----------=> .addEventListener('click', ()=>{});
       () => openModal(dayString)); 
 
+      // ####################################################################################################
       var saveSquare = document.createElement('button'); // 
-      saveSquare.innerHTML = 'save';
-      saveSquare.classList.add('save'); // 
+      saveSquare.innerHTML = 'select';
+      saveSquare.classList.add('select'); // 
       
       saveSquare.addEventListener('click', () => {
         var saved_date = `${month+1}/${i-paddingDays}/${year}`
         if (savedDates.includes(saved_date, 0)){
-          console.log('already saved dates');
+          // console.log('already saved dates');
+          alert('already saved dates');
         }
         else{
           savedDates.push(saved_date); // ----------- KEY POINT -----------=> push
@@ -100,12 +109,14 @@ function load() {
         // console.log(savedDates);
       });
       daySquare.appendChild(saveSquare);
-  
+      // ####################################################################################################
+
     } else {
       daySquare.classList.add('padding');
     }
     calendar.appendChild(daySquare);
   }
+  
 }
 
 function closeModal() {
