@@ -7,23 +7,15 @@ body {
 button {
     width: 75px;
     cursor: pointer;
-    box-shadow: 0px 0px 2px gray;
     border: none;
     outline: none;
-    color: white;
 }
 
 #header {
     padding: 10px;
-    color: #d36c6c;
     font-size: 26px;
-    font-family: sans-serif;
     display: flex;
     justify-content: space-between;
-}
-
-#header button {
-    background-color: #92a1d1;
 }
 
 #container {
@@ -33,7 +25,6 @@ button {
 #weekdays {
     width: 100%;
     display: flex;
-    color: #247BA0;
 }
 
 #weekdays div {
@@ -54,7 +45,6 @@ button {
     height: 100px;
     cursor: pointer;
     box-sizing: border-box;
-    background-color: white;
     margin: 5px;
     box-shadow: 0px 0px 3px #CBD4C2;
     display: flex;
@@ -63,7 +53,7 @@ button {
 }
 
 .day+#currentDay {
-    background-color: #e8f4fa;
+    background-color: #d36c6c;
 }
 
 .event {
@@ -72,11 +62,12 @@ button {
     background-color: #58bae4;
     width: 70px;
     overflow: hidden;
+    text-align: center;
 }
 
 .padding {
     cursor: default !important;
-    background-color: #FFFCFF !important;
+    /*background-color: #FFFCFF !important;*/
     box-shadow: none !important;
 }
 
@@ -85,14 +76,13 @@ button {
     display: none;
     z-index: 20;
     padding: 25px;
-    background-color: #e8f4fa;
+    background-color: #58bae4;
     box-shadow: 0px 0px 3px black;
     border-radius: 5px;
     width: 350px;
     top: 100px;
     left: calc(50% - 175px);
     position: absolute;
-    font-family: sans-serif;
 }
 
 #eventTitleInput {
@@ -111,14 +101,10 @@ button {
 }
 
 #cancelButton,
-#deleteButton {
-    background-color: #d36c6c;
-}
+#deleteButton {}
 
 #saveButton,
-#closeButton {
-    background-color: #92a1d1;
-}
+#closeButton {}
 
 #eventText {
     font-size: 14px;
@@ -136,5 +122,8 @@ button {
 }
 
 #savedDates {
-    padding: 10px;
+    margin-left: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: #FDD05C;
 }

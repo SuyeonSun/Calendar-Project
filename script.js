@@ -55,8 +55,10 @@ function load() {
   document.getElementById('monthDisplay').innerText = `${month+1}月 ${year}`; // 해당 month, year 표시
 
   calendar.innerHTML = ''; // when rendering new ones, need to wipe out the existing div tags
+  
+  const normal = paddingDays + daysInMonth;
 
-  for(let i = 1; i<= paddingDays + daysInMonth; i++) {
+  for(let i = 1; i<= normal; i++) {
     const daySquare = document.createElement('div'); // ----------- KEY POINT -----------=> .createElement('Tag Name');
     daySquare.classList.add('day'); // daySquare에 'day'라는 class 부여 ----------- KEY POINT -----------=> .classList.add('Class Name');
     
@@ -91,15 +93,15 @@ function load() {
 
       // ####################################################################################################
       var saveSquare = document.createElement('button'); // 
-      saveSquare.innerHTML = 'select';
-      saveSquare.classList.add('select'); // 
+      saveSquare.innerHTML = 'mark';
+      saveSquare.classList.add('mark'); // 
       
       saveSquare.addEventListener('click', () => {
         var saved_date = `${month+1}/${i-paddingDays}/${year}`
         if (savedDates.includes(saved_date, 0)){
           // console.log('already saved dates');
           const idx = savedDates.indexOf(saved_date);
-          alert('remove');
+          alert(`${saved_date} mark removed`);
           savedDates.splice(idx, 1);
           document.getElementById('savedDates').innerHTML = savedDates;
         }
@@ -172,7 +174,6 @@ function initButtons() {
   document.getElementById('deleteButton').addEventListener('click', deleteEvent);
   document.getElementById('closeButton').addEventListener ('click', closeModal);
 }
-
 
 initButtons();
 load();
