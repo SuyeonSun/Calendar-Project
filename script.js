@@ -1,7 +1,7 @@
 let nav = 0; // way to keep track the month
 let clicked = null; 
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
-var savedDates= []; // save 버튼 클릭 시 저장되는 날짜
+var savedDates= []; // mark 버튼 클릭 시 mark되는 날짜
 
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
@@ -60,7 +60,8 @@ function load() {
 
   for(let i = 1; i<= normal; i++) {
     const daySquare = document.createElement('div'); // ----------- KEY POINT -----------=> .createElement('Tag Name');
-    daySquare.classList.add('day'); // daySquare에 'day'라는 class 부여 ----------- KEY POINT -----------=> .classList.add('Class Name');
+    // ----------- KEY POINT -----------=> .classList.add('Class Name');
+    daySquare.classList.add('day'); // daySquare에 'day'라는 class 부여 
     
     const dayString = `${month+1}/${i-paddingDays}/${year}`;
 
@@ -91,7 +92,7 @@ function load() {
       // () => console.log(`${month+1}/${i-paddingDays}/${year}`)); // ----------- KEY POINT -----------=> .addEventListener('click', ()=>{});
       () => openModal(dayString)); 
 
-      // ####################################################################################################
+      // mark 기능
       var saveSquare = document.createElement('button'); // 
       saveSquare.innerHTML = 'mark';
       saveSquare.classList.add('mark'); // 
@@ -109,12 +110,8 @@ function load() {
           savedDates.push(saved_date); // ----------- KEY POINT -----------=> push
           document.getElementById('savedDates').innerHTML = savedDates;
         }
-        // savedDates.push(saved_date);
-        // document.getElementById('savedDates').innerHTML = savedDates;
-        // console.log(savedDates);
       });
       daySquare.appendChild(saveSquare);
-      // ####################################################################################################
 
     } else {
       daySquare.classList.add('padding');
